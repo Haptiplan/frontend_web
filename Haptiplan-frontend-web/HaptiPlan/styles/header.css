@@ -1,0 +1,29 @@
+.navbar{
+    background-color: #5c4e4e;
+    padding: 110px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+}
+.inner-navbar{
+    display: flex;
+    justify-content: space-between;
+  }
+.active{
+    background-color: #988686;
+    color: #232425;
+}
+.active:hover{
+    background-color: #A89696;
+    color: #131415;
+}
+.element-list{
+    display: flex;
+    justify-content:flex-end;
+}
+.element{
+    color: #d1d0d0;
+}
+.element:hover{
+    color: #e1e0e0;
+    background-color: #6c5e5e;
+}
