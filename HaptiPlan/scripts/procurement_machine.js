@@ -22,20 +22,21 @@ getMachine()
 document.getElementById('dataForm').addEventListener('submit', submitForm);
 
 function submitForm(event) {
-
   event.preventDefault();
 
   const formData = new FormData(event.target);
+  var description_value = formData.get('description');
 
   fetch('http://localhost/haptiplan-backend/HaptiPlan/machine', {
       method: 'POST',
-      body: formData
+      body: JSON.stringify({"description": description_value})
   })
   .then(response => { return response.json(); })
   .then(data => {
       console.log('Data successfully inserted');
       getMachine();
   })
+
 }
   
 
