@@ -1,7 +1,7 @@
 body{
     background-color: rgba(208, 214, 223, 0.606);
 }
-div.machineList {
+div.machine_list {
     position: relative;
     width: 30%;
     border: 1px solid #2f2f2f;
@@ -9,4 +9,10 @@ div.machineList {
     display: flex;
     flex-direction: column;
     padding: 0.75rem 0.75rem 2rem;
+}
+
+div.machine_name{
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
 }
