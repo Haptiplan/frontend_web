@@ -2,26 +2,33 @@ function getMachine() {
   fetch('http://localhost/haptiplan-backend/HaptiPlan/machine')
     .then(response => response.json())
     .then(data => {
-
-      let dataList = document.getElementById('dataList');
+      let data_list = document.getElementById('data_list');
       // Clear any existing items in the list
-      dataList.innerHTML = '';
-
-      const machineTemplate = document.getElementById('machineTemplate');
+      data_list.innerHTML = '';
+      const machine_template = document.getElementById('machine_template');
 
       // Loop through the data and create list items
       data.forEach(item => {
-        const machineInstance = machineTemplate.content.cloneNode(true);
-        machineInstance.querySelector('.machine_name').textContent = item.description;
-        dataList.appendChild(machineInstance);
+        const machine_instance = machine_template.content.cloneNode(true);
+        machine_instance.querySelector('.machine_name').textContent = item.description;
+        machine_instance.querySelector('input[name="machineId"]').value = item.machineId;
+        const deleteFormElement = machine_instance.querySelector(".delete_form");
+        
+        if (deleteFormElement) {
+            deleteFormElement.addEventListener('submit', deleteForm);
+        }
+        data_list.appendChild(machine_instance);
     });
+    console.log(data);
+
 })
 }
 
-getMachine()
+getMachine();
 
 
-document.getElementById('dataForm').addEventListener('submit', submitForm);
+document.getElementById('data_form').addEventListener('submit', submitForm);
+
 
 function submitForm(event) {
   event.preventDefault();
@@ -40,10 +47,25 @@ function submitForm(event) {
       console.log('Data successfully inserted');
       getMachine();
     })
-
 }
 
+function deleteForm(event) {
+  event.preventDefault();
 
+  const formData = new FormData(event.target);
+  var description_value = formData.get('description');
 
-
-
+  fetch('http://localhost/haptiplan-backend/haptiplan/machine/delete', {
+    method: 'POST',
+    body: JSON.stringify({ "description": description_value })
+  })
+  .then(response => {
+    return response.json(); 
+   })
+    .then(data => {
+      console.log('Data successfully deleted');
+      console.log(data);
+      getMachine();
+    })
+    .catch(error => console.error('Error deleting machine data:', error));
+}
