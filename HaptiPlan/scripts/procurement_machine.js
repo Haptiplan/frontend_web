@@ -2,52 +2,56 @@ function getMachine() {
   fetch('http://localhost/haptiplan-backend/HaptiPlan/machine')
     .then(response => response.json())
     .then(data => {
-      let data_list = document.getElementById('data_list');
+
+      let dataList = document.getElementById('dataList');
       // Clear any existing items in the list
-      data_list.innerHTML = '';
-      const machine_template = document.getElementById('machine_template');
+      dataList.innerHTML = '';
+
+      const machineTemplate = document.getElementById('machineTemplate');
 
       // Loop through the data and create list items
       data.forEach(item => {
-        const machine_instance = machine_template.content.cloneNode(true);
-        machine_instance.querySelector('.machine_name').textContent = item.description;
-        machine_instance.querySelector('input[name="machineId"]').value = item.machineId;
-        const deleteFormElement = machine_instance.querySelector(".delete_form");
-        
-        if (deleteFormElement) {
-            deleteFormElement.addEventListener('submit', deleteForm);
-        }
-        data_list.appendChild(machine_instance);
+        const machineInstance = machineTemplate.content.cloneNode(true);
+        machineInstance.querySelector('.machine_name').textContent = item.machine_name;
+        dataList.appendChild(machineInstance);
     });
-    console.log(data);
-
 })
 }
 
-getMachine();
+getMachine()
 
 
-document.getElementById('data_form').addEventListener('submit', submitForm);
+const form = document.querySelector('form');
 
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-function submitForm(event) {
-  event.preventDefault();
-
-  const formData = new FormData(event.target);
-  var description_value = formData.get('description');
+const formData = new FormData(form);
+const machine_name = formData.get('machine_name');
+const machine_capacity= parseInt(formData.get('machine_capacity'));
+const machine_price= parseFloat(formData.get('machine_price'));
+const machine_duration = parseInt(formData.get('machine_duration'));
+const machine_period = parseInt(formData.get('machine_period'));
 
   fetch('http://localhost/haptiplan-backend/HaptiPlan/machine', {
-    method: 'POST',
-    body: JSON.stringify({ "description": description_value })
-  })
-    .then(response => {
-       return response.json(); 
-      })
-    .then(data => {
-      console.log('Data successfully inserted');
-      getMachine();
+    method: "POST",
+    body: JSON.stringify({
+        "machine_name": machine_name,
+        "machine_capacity":machine_capacity,
+        "machine_price": machine_price,
+        "machine_duration": machine_duration,
+        "machine_period": machine_period
     })
-}
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    getMachine();
+
+  })
+  .catch(error => console.log(error))
+
+})
 
 function deleteForm(event) {
   event.preventDefault();

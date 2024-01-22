@@ -12,23 +12,38 @@
     <?php include_once('header.php'); ?>
     <h1>Maschinen</h1>
 
-    <form id="data_form">
+    <form>
         <div>
-            <label for="description">Description</label>
-            <input type="text" name="description" id="description" required>
-            <button type="submit" id="submitBtn">create machine</button>
-        </div>
+            <label for="machine_name">Machine name</label>
+            <input type="text" name="machine_name" id="machine_name" required>
+            <div>
+                <div>
+                    <label for="machine_capacity">Machine capacity</label>
+                    <input type="text" name="machine_capacity" id="machine_capacity" required>
+                    <div>
+                        <div>
+                            <label for="machine_price">Machine price</label>
+                            <input type="text" name="machine_price" id="machine_price" required>
+                            <div>
+                                <div>
+                                    <label for="machine_duration">machine duration</label>
+                                    <input type="text" name="machine_duration" id="machine_duration" required>
+                                    <div>
+                                        <div>
+                                            <label for="machine_period">machine_period</label>
+                                            <input type="text" name="machine_period" id="machine_period" required>
+                                            <div>
+                                                <button type="submit">create machine</button>
     </form>
 
-    <ul id='data_list'></ul>
-    <template id="machine_template">
+    <ul id='dataList'></ul>
+    <template id="machineTemplate">
         <div class="machine_list">
             <div class="machine_name"></div>
-            <form class="delete_form">
-                <div>
-                    <input type="hidden" name="machineId">
-                    <button type="submit">löschen</button>
-                </div>
+            <div>
+                <input type="hidden" name="machineId">
+                <button type="submit">löschen</button>
+            </div>
             </form>
         </div>
     </template>
@@ -36,3 +51,4 @@
 </body>
 
 </html>
+<form class="delete_form">
