@@ -13,15 +13,21 @@ function getMachine() {
       data.forEach(item => {
         const machineInstance = machineTemplate.content.cloneNode(true);
         machineInstance.querySelector('.machine_name').textContent = item.machine_name;
+        machineInstance.querySelector('.machine_capacity').textContent = item.machine_capacity;
+        machineInstance.querySelector('.machine_price').textContent = item.machine_price;
+        machineInstance.querySelector('.machine_duration').textContent = item.machine_duration;
+        machineInstance.querySelector('.machine_period').textContent = item.machine_period;
+
         dataList.appendChild(machineInstance);
     });
 })
 }
 
-getMachine()
+getMachine();
 
 
-const form = document.querySelector('form');
+/** 
+const form = document.querySelector('.add_form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -43,9 +49,12 @@ const machine_period = parseInt(formData.get('machine_period'));
         "machine_period": machine_period
     })
   })
-  .then(response => response.json())
+  .then(response => response.text())
   .then(data => {
     console.log(data);
+    const parsedData = JSON.parse(data);
+    console.log(parsedData);
+
     getMachine();
 
   })
@@ -61,7 +70,6 @@ function deleteForm(event) {
 
   fetch('http://localhost/haptiplan-backend/haptiplan/machine/delete', {
     method: 'POST',
-    body: JSON.stringify({ "description": description_value })
   })
   .then(response => {
     return response.json(); 
@@ -72,4 +80,4 @@ function deleteForm(event) {
       getMachine();
     })
     .catch(error => console.error('Error deleting machine data:', error));
-}
+  }*/
