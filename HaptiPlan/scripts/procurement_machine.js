@@ -27,13 +27,34 @@ function getMachine() {
 getMachine();
 
 const form = document.querySelector('.add_form');
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const formData = new FormData(form);
-  
-  // ... (rest of your form submission code)
-});
+
+const formData = new FormData(form);
+const machine_name = formData.get('machine_name');
+const machine_capacity= parseInt(formData.get('machine_capacity'));
+const machine_price= parseFloat(formData.get('machine_price'));
+const machine_duration = parseInt(formData.get('machine_duration'));
+const machine_period = parseInt(formData.get('machine_period'));
+
+  fetch('http://localhost/haptiplan-backend/HaptiPlan/machine', {
+    method: "POST",
+    body: JSON.stringify({
+        "machine_name": machine_name,
+        "machine_capacity":machine_capacity,
+        "machine_price": machine_price,
+        "machine_duration": machine_duration,
+        "machine_period": machine_period
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    getMachine();
+
+  })
+  .catch(error => console.log(error))
+})
 
 // Use querySelectorAll to select all delete buttons
 const delete_machines = document.querySelectorAll('.delete_machine');
@@ -52,7 +73,7 @@ function deleteMachine(deleteForm) {
   console.log(machine_id);
 
 
-  fetch(`http://localhost/haptiplan-backend/HaptiPlan/machine/${machine_id}`, {
+  fetch(`http://localhost/haptiplan-backend/HaptiPlan/machine/delete/${machine_id}`, {
     method: 'DELETE',
   })
   .then(response => response.json())
