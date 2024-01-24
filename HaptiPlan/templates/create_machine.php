@@ -36,24 +36,22 @@
         <button type="submit">create machine</button>
     </form>
 
-    <ul id='dataList'></ul>
-    <template id="machineTemplate">
+    <ul class='dataList'></ul>
+    <template class="machineTemplate">
         <div class="machine_list">
             <div class="machine_name"></div>
             <div class="machine_capacity"></div>
             <div class="machine_price"></div>
             <div class="machine_duration"></div>
             <div class="machine_period"></div>
-            <form>
-            <div>
-                <input type="hidden" name="machineId">
-                <button type="submit">löschen</button>
-            </div>
+            <form class="delete_form">
+                <input type="text" name="machine_id">
+                <button type="button" onclick="deleteMachine(this.form)">delete</button>
             </form>
         </div>
     </template>
+
     <script src="../scripts/procurement_machine.js"></script>
 </body>
 
 </html>
-<form class="delete_form">
