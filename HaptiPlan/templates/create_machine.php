@@ -11,7 +11,6 @@
 <body>
     <?php include_once('header.php'); ?>
     <h1>Maschinen</h1>
-
     <form class="add_form">
         <div>
             <label for="machine_name">Machine name</label>

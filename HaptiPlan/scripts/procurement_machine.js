@@ -12,21 +12,21 @@ function getMachine() {
       // Loop through the data and create list items
       data.forEach(item => {
         const machineInstance = machineTemplate.content.cloneNode(true);
+
         machineInstance.querySelector('input[name="machine_id"]').value = item.machine_id;
         machineInstance.querySelector('.machine_name').textContent = item.machine_name;
         machineInstance.querySelector('.machine_capacity').textContent = item.machine_capacity;
         machineInstance.querySelector('.machine_price').textContent = item.machine_price;
         machineInstance.querySelector('.machine_duration').textContent = item.machine_duration;
         machineInstance.querySelector('.machine_period').textContent = item.machine_period;
-
         dataList.appendChild(machineInstance);
       });
     });
 }
 
 getMachine();
-
 const form = document.querySelector('.add_form');
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -49,12 +49,12 @@ const machine_period = parseInt(formData.get('machine_period'));
   })
   .then(response => response.json())
   .then(data => {
-    console.log(data);
     getMachine();
 
   })
   .catch(error => console.log(error))
 })
+
 
 // Use querySelectorAll to select all delete buttons
 const delete_machines = document.querySelectorAll('.delete_machine');
@@ -78,7 +78,6 @@ function deleteMachine(deleteForm) {
   })
   .then(response => response.json())
   .then(data => {
-    console.log(data);
     getMachine();
   })
   .catch(error => console.log(error));
