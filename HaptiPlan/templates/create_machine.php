@@ -37,18 +37,22 @@
 
     <ul class='dataList'></ul>
     <template class="machineTemplate">
-        <div class="machine_list">
+        <div class="machine_list" draggable= "true" ondragstart="dragMachine(event)">
             <div class="machine_name"></div>
             <div class="machine_capacity"></div>
             <div class="machine_price"></div>
             <div class="machine_duration"></div>
             <div class="machine_period"></div>
             <form class="delete_form">
-                <input type="text" name="machine_id">
+                <input type="hidden" name="machine_id">
                 <button type="button" onclick="deleteMachine(this.form)">delete</button>
             </form>
         </div>
     </template>
+
+    <div id="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+       Löschen
+    </div>
 
     <script src="../scripts/procurement_machine.js"></script>
 </body>

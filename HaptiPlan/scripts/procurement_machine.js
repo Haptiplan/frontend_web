@@ -82,3 +82,32 @@ function deleteMachine(deleteForm) {
   })
   .catch(error => console.log(error));
 }
+
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+/**
+ * 
+*/
+function drop(event) {
+  event.preventDefault();
+  const machineId = event.dataTransfer.getData("text");
+  
+  fetch(`http://localhost/haptiplan-backend/HaptiPlan/machine/delete/${machineId}`, {
+    method: 'DELETE',
+  })
+  .then(response => response.json())
+  .then(data => {
+    getMachine();
+  })
+  .catch(error => console.log(error));
+}
+
+function dragMachine(event) {
+  const machineId = event.target.querySelector('input[name="machine_id"]').value;
+  event.dataTransfer.setData("text/plain", machineId);
+  event.target.classList.add("dragging");
+  console.log('Maschinen-Template Drag start:', event);
+}
