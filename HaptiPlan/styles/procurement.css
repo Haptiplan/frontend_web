@@ -16,3 +16,31 @@ div.machine_name{
     color: #333;
     margin-top: 10px;
 }
+#drop-zone {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    text-align: center;
+    line-height: 200px;
+    position: fixed; /* Die Position wird relativ zum nächsten positionierten Vorgänger festgelegt */
+    top: 50%; /* Die Drop-Zone wird oben platziert */
+    right: 0; /* Die Drop-Zone wird ganz rechts platziert */
+    transition: background-color 0.3s ease; /* Animationsübergang für Hintergrundfarbe */
+}
+#drop-zone img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#drop-zone:hover {
+    background-color: #f0f0f0; /* Hover-Effekt für den Zielbereich */
+}
+#drop-zone.dragover {
+    background-color: #f0f0f0; /* Hover-Effekt für den Zielbereich */
+}
+
+.dragging {
+    opacity: 0.5; /* Transparenz hinzufügen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatten hinzufügen */
+    transition: opacity 0.3s ease; /* Animationsübergang für die Transparenz */
+    cursor: grabbing; /* Mauszeiger ändern */
+}
