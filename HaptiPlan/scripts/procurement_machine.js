@@ -1,5 +1,5 @@
 function getMachine() {
-  fetch('http://localhost/haptiplan-backend/HaptiPlan/machine')
+  fetch(window.location.origin + '/backend/HaptiPlan/machine')
     .then(response => response.json())
     .then(data => {
 
@@ -37,7 +37,7 @@ const machine_price= parseFloat(formData.get('machine_price'));
 const machine_duration = parseInt(formData.get('machine_duration'));
 const machine_period = parseInt(formData.get('machine_period'));
 
-  fetch('http://localhost/haptiplan-backend/HaptiPlan/machine', {
+  fetch(window.location.origin + '/backend/HaptiPlan/machine', {
     method: "POST",
     body: JSON.stringify({
         "machine_name": machine_name,
@@ -73,7 +73,7 @@ function deleteMachine(deleteForm) {
   console.log(machine_id);
 
 
-  fetch(`http://localhost/haptiplan-backend/HaptiPlan/machine/delete/${machine_id}`, {
+  fetch(window.location.origin + `backend/HaptiPlan/machine/delete/${machine_id}`, {
     method: 'DELETE',
   })
   .then(response => response.json())
@@ -92,7 +92,7 @@ function drop(event) {
   event.preventDefault();
   const machineId = event.dataTransfer.getData("text");
   
-  fetch(`http://localhost/haptiplan-backend/HaptiPlan/machine/delete/${machineId}`, {
+  fetch(window.location.origin +`/backend/HaptiPlan/machine/delete/${machineId}`, {
     method: 'DELETE',
   })
   .then(response => response.json())

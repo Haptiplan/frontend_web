@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="/Haptiplan-backend/HaptiPlan/machine/update" method="post">
+    <form action="/backend/HaptiPlan/machine/update" method="post">
     <div>
         <label for="id">ID</label>
         <input type="text" name="id">
