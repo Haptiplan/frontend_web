@@ -55,35 +55,6 @@ const machine_period = parseInt(formData.get('machine_period'));
   .catch(error => console.log(error))
 })
 
-/* Lösch Button
-// Use querySelectorAll to select all delete buttons
-const delete_machines = document.querySelectorAll('.delete_machine');
-
-// Add an event listener to each delete button
-delete_machines.forEach(delete_machine => {
-  delete_machine.addEventListener('submit', (e) => {
-    e.preventDefault();
-    deleteMachine(e.target);
-  });
-});
-
-function deleteMachine(deleteForm) {
-  const formData = new FormData(deleteForm);
-  const machine_id = formData.get('machine_id');
-  console.log(machine_id);
-
-
-  fetch(window.location.origin + `backend/HaptiPlan/machine/delete/${machine_id}`, {
-    method: 'DELETE',
-  })
-  .then(response => response.json())
-  .then(data => {
-    getMachine();
-  })
-  .catch(error => console.log(error));
-}
-*/
-
 function allowDrop(event) {
   event.preventDefault();
 }
