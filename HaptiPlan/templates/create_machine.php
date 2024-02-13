@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/procurement.css">
-</head>
-
-<body>
-    <?php include_once('header.php'); ?>
     <h1>Maschinen</h1>
-    
+
     <form class="add_form">
         <div>
             <label for="machine_name">Machine name</label>
@@ -51,9 +39,6 @@
     </template>
 
     <div id="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <img id="trashcan-image" src="../styles/trashcanclosed.png" alt="trashcan" style="max-width: 100%; max-height: 100%;">
+        <img id="trashcan-image" src="./Haptiplan/styles/trashcanclosed.png" alt="trashcan" style="max-width: 100%; max-height: 100%;">
     </div>
-    <script src="../scripts/procurement_machine.js"></script>
-</body>
-
-</html>
+    <script src="./Haptiplan/scripts/procurement_machine.js"></script>

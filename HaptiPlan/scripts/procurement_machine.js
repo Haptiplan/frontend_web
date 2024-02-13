@@ -107,7 +107,7 @@ function dragMachine(event) {
   event.dataTransfer.setData("text/plain", machineId);
   event.target.classList.add("dragging");
   const meinBild = document.getElementById('trashcan-image');
-  meinBild.src = "../styles/trashcanopen.png";
+  meinBild.src = "./Haptiplan/styles/trashcanopen.png";
   event.target.addEventListener('dragend', dragEnd);
   
 }
@@ -115,7 +115,7 @@ function dragMachine(event) {
 function dragEnd(event) {
   event.target.classList.remove("dragging");
   const meinBild = document.getElementById('trashcan-image');
-  meinBild.src = "../styles/trashcanclosed.png";
+  meinBild.src = "./Haptiplan/styles/trashcanclosed.png";
 }
 
 //Optional
