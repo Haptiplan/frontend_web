@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="/Haptiplan-backend/HaptiPlan/machine/delete" method="post">
+    <form action="/backend/HaptiPlan/machine/delete" method="post">
         <div class="mb-3">
             <label for="" class="form-label">ID:</label>
             <input type="text" class="form-control" id="id" name="id">

@@ -11,6 +11,7 @@
 <body>
     <?php include_once('header.php'); ?>
     <h1>Maschinen</h1>
+    
     <form class="add_form">
         <div>
             <label for="machine_name">Machine name</label>
@@ -37,19 +38,21 @@
 
     <ul class='dataList'></ul>
     <template class="machineTemplate">
-        <div class="machine_list">
+        <div class="machine_list" draggable="true" ondragstart="dragMachine(event)">
             <div class="machine_name"></div>
             <div class="machine_capacity"></div>
             <div class="machine_price"></div>
             <div class="machine_duration"></div>
             <div class="machine_period"></div>
             <form class="delete_form">
-                <input type="text" name="machine_id">
-                <button type="button" onclick="deleteMachine(this.form)">delete</button>
+                <input type="hidden" name="machine_id">
             </form>
         </div>
     </template>
 
+    <div id="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img id="trashcan-image" src="../styles/trashcanclosed.png" alt="trashcan" style="max-width: 100%; max-height: 100%;">
+    </div>
     <script src="../scripts/procurement_machine.js"></script>
 </body>
 
