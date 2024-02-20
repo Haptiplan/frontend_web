@@ -15,8 +15,7 @@
     <?php include_once('./HaptiPlan/templates/header.php'); ?>
 
     <!-- Creat machine -->
-    <?php include_once ('./HaptiPlan/templates/create_machine.php')?>
-
+    <h1>HaptiPlan</h1>
     <!-- Footer -->
     <?php include_once('./HaptiPlan/templates/footer.php'); ?>
 

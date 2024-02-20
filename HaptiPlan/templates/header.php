@@ -4,7 +4,7 @@
       <span class=""></span>
     </button-->
     <a class="active" aria-current="page"
-      href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/'; ?>">Unternehmsplanspiel</a>
+      href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/'; ?>">Unternehmsplanspiel</a>
     <ul class="element-list">
       <a class="element"
         href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/templates/Beschaffung'; ?>">Beschaffung</a>
