@@ -27,7 +27,7 @@
             </form>
         </div>
     </template>
-    <script scr="../scripts/procurement_employee.js"></script>
+    <script src="../scripts/procurement_employee.js"></script>
 </body>
 
 </html>
