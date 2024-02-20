@@ -13,8 +13,9 @@
       <a class="element"
         href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/Auftraege'; ?>">Aufträge</a>
       <a class="element"
-        href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/templates/create_machine.php'; ?>">Maschine</a>
+      href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/templates/create_machine.php'; ?>">Maschine</a>
+      <a class="element"
+        href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/templates/credit.php'; ?>">Kredit</a>
     </ul>
-
   </div>
 </nav>
