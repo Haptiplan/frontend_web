@@ -14,16 +14,18 @@ body{
 }
 .inner-navbar{
   height: 65px;
+  width: 100%;
   position: sticky;
   top: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .active{
   background-color: #232425;
   color: #d1d0d0;
   font-size: 1.3em;
-  margin: 0 60% 0 10px;
+  margin-left: 10px;
   padding: 15px;
   box-shadow: 1px 0px 1px #232425;
   border-radius: 4px;
@@ -33,23 +35,57 @@ body{
   color: #e1e0e0;
 }
 .element-list{
-  border-left: 150px;
   display: flex;
-  justify-content: flex-end;
+  color: #232425;
   margin-top: -10px;
+  margin-right: 1%;
   margin-bottom: -10px;
+  width:fit-content;
+  align-items: center;
 }
 .element{
   color: #232425;
   font-size: 1em;
   text-align: center;
-  width: 110px;
+  width: auto;
   padding: 10px;
+  margin: 5px;
+  transition-duration: 0.2s;
 }
+
 .element:hover{
-  color: #e1e0e0;
   font-size: 1.05em;
   background-color: #887676;
   box-shadow: 0px 0px 1px 1px #6c5e5e;
   border-radius: 4px;
+}
+.drop {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+.drop-button {
+  cursor: pointer;
+  text-align: center;
+}
+.drop-element {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+.drop-content {
+  position:absolute;
+  display:none;
+  margin: 11px;
+  cursor:pointer;
+  height: max-content;
+  background-color: #988686;
+  border-radius: 5px;
+}
+.drop-button:hover > .drop-content,
+.drop-content:focus-within > .drop-content {
+  display: block;
+  width: 100px;
+  padding: 0;
+  margin: 0;
 }
