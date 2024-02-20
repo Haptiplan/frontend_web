@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../styles/footer.css">
-
 <!-- Footer -->
 <footer>
 
