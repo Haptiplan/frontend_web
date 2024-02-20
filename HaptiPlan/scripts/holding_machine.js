@@ -2,12 +2,12 @@ function getMachine() {
   fetch(window.location.origin + '/backend/HaptiPlan/machine')
   .then(response => response.json())
   .then(data => {
-  
-    let dataList = document.querySelector('.dataList');
+  console.log(data);
+    let dataList = document.querySelector('.dataList2');
     // Clear any existing items in the list
     dataList.innerHTML = '';
   
-    const machineTemplate = document.querySelector('.machineTemplate');
+    const machineTemplate = document.querySelector('.machineTemplate2');
   
     // Loop through the data and create list items
     data.forEach(item => {
@@ -26,10 +26,6 @@ function getMachine() {
 
 getMachine();
 /*
-  function allowDrop(event) {
-    event.preventDefault();
-  }
-  
   function drop(event) {
     event.preventDefault();
 	const machineId = event.dataTransfer.getData('text');
@@ -51,20 +47,17 @@ function allowDrop(event) {
 
 function drop(event) {
   event.preventDefault();
-  const machine_id = event.dataTransfer.getData("Number");
+  const meinBild = document.getElementById('machine-image'); // Das Bild-Element
+  meinBild.src = "../styles/machine.png";
+  meinBild.style.display = "block";  
 
-  fetch(window.location.origin +`/backend/HaptiPlan/machine/${machine_id}`, {
-    method: 'GET',
-  })
-  .then(response => response.json())
-  .then(data => {
-    updateDropField(data.machine_name);
-  })
-  .catch(error => console.log(error));
+  // Das Ziel-Div, in das das Bild eingefügt werden soll
+  const targetDiv = event.target;
+  targetDiv.appendChild(meinBild);
 }
 
 function updateDropField(machine_name) {
-  const dropField = document.getElementById('drop-zone2');
+  const dropField = document.getElementsByClassName("buildingPlace");
   dropField.innerHTML = machine_name;
 }
 
@@ -72,10 +65,10 @@ function dragMachine(event) {
     const machine_id = event.target.querySelector('input[name="machine_id"]').value;
     event.dataTransfer.setData("text/plain", machine_id);
     event.target.classList.add("dragging");
-    event.target.addEventListener('dragend', dragEnd);
+    event.target.addEventListener("dragend", dragEnd);
 }
   
 function dragEnd(event) {
   event.target.classList.remove("dragging");
 }
-  
+

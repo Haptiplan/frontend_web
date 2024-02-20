@@ -13,7 +13,7 @@ div.machine_list {
 
 div.machine_list2 {
     position: relative;
-    width: 10%;
+    width: 100px;
     border: 1px solid #2f2f2f;
     flex: auto 0 1;
     display: flex;
@@ -55,25 +55,42 @@ div.machine_name{
     cursor: grabbing; /* Mauszeiger ändern */
 }
 
-#drop-zone2 {
-    border-style: dotted; 
+#building {
+    border-style: solid; 
     border-radius: 10px;
     width: 500px; 
     height: 300px; 
     margin: 20px;
     padding: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+
     position: absolute; 
     top: 25%; 
-    right:10%;
+    right: 10%;
     text-align: center;
     line-height: 270px;
     transition: background-color 0.3s ease; /* Animationsübergang für Hintergrundfarbe */
 }
 
-#drop-zone2:hover {
-    background-color: #f0f0f0; /* Hover-Effekt für den Zielbereich */
+.buildingPlace {
+    width: 100px;
+    height: 100px;
+    border-style: dotted;
+    border-radius: 7px;
+
 }
 
-#drop-zone2.dragover {
+.buildingPlace:hover {
+    background-color: #f0f0f0; /* Hover-Effekt für den Zielbereich */
+    border-color: red;
+
+}
+
+div.buildingPlace.dragover {
     background-color: #f0f0f0; /* Hover-Effekt für den Zielbereich */
 }
