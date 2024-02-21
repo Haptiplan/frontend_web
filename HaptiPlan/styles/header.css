@@ -76,6 +76,7 @@ body{
 .drop-content {
   position:absolute;
   display:none;
+  visibility: hidden;
   margin: 11px;
   cursor:pointer;
   height: max-content;
@@ -85,6 +86,7 @@ body{
 .drop-button:hover > .drop-content,
 .drop-content:focus-within > .drop-content {
   display: block;
+  visibility: visible;
   width: 100px;
   padding: 0;
   margin: 0;
