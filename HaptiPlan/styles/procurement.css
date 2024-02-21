@@ -1,7 +1,8 @@
 body{
     background-color: rgba(208, 214, 223, 0.606);
 }
-div.machine_list {
+div.machine_list,
+div.employee_list {
     position: relative;
     width: 30%;
     border: 1px solid #2f2f2f;
@@ -11,7 +12,8 @@ div.machine_list {
     padding: 0.75rem 0.75rem 2rem;
 }
 
-div.machine_name{
+div.machine_name,
+div.employee_name {
     font-weight: bold;
     color: #333;
     margin-top: 10px;

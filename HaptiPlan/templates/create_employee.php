@@ -13,6 +13,8 @@
     <h1>Mitarbeiter:</h1>
     <form class="add_form">
         <div>
+            <label for="employee_name">Name</label>
+            <input type="text" name="employee_name" id="employee_name">
             <label for="employee_salary">Salary</label>
             <input type="text" name="employee_salary" id="employee_salary">
         </div>
@@ -20,9 +22,10 @@
     </form>
     <ul class='dataList'></ul>
     <template class="employeeTemplate">
-        <div class="employee_list" draggable="true" ondragstart="dragMachine(event)">
+        <div class="employee_list">
+            <div class="employee_name"></div>
             <div class="employee_salary"></div>
-            <form class="delete_form">
+            <form>
                 <input type="hidden" name="employee_id">
             </form>
         </div>
