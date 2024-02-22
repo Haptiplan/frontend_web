@@ -18,6 +18,14 @@ div.employee_name {
     color: #333;
     margin-top: 10px;
 }
+.drop-zone {
+    width: 300px;
+    height: 300px;;
+    border-style: dotted;
+    position: fixed;
+    top: 20%;
+    right: 5%; 
+}
 #drop-zone {
     width: 300px;
     height: 200px;
