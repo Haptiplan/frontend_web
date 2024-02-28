@@ -40,7 +40,7 @@
         </div>
     </template>
 
-    <script src="../scripts/p rocurement_building.js"></script>
+    <script src="../scripts/procurement_building.js"></script>
 </body>
 
 </html>

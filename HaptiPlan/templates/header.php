@@ -17,7 +17,7 @@
             href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/templates/credit.php'; ?>">Kredit
           </a></div>
           <div><a class="element drop-element"
-            href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/templates/create_building.php'; ?>">Gebäude erstellen
+            href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/frontend_web/HaptiPlan/templates/gamemaster_building.php'; ?>">Gebäude erstellen
           </a></div>
         </div>
       </div>
