@@ -1,3 +1,28 @@
+<?php
+session_start();
+
+// Check if user is already logged in, if not, redirect them to login
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false){
+  header("location: login.php");
+  exit;
+}
+
+// Check if user has an incorrect role
+if($_SESSION["user_role"] !== 1){
+  switch ($_SESSION['user_role']) {
+    // Case admin
+    case 0:
+      exit;
+    // Case player
+    case 2:
+      header("location: add_machine.php");
+      exit;
+  }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +35,9 @@
 
 <body>
     <?php include_once('header.php'); ?>
+    
+    <a href="logout.php">Logout</a>
+
     <h1>Maschinen</h1>
     
     <form class="add_form">
