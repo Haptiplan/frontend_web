@@ -21,7 +21,7 @@
     <form class="add_form">
         <div>
             <label for="building_name">Gebäude Namen</label>
-            <input type="text" name="building_name" id="building_name">
+            <input type="text" name="building_name" id="building_name" required>
         </div>
         <div>
             <label for="building">Gebäude Preis</label>
